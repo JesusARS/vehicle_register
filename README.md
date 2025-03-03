@@ -129,9 +129,9 @@ La API recibe una lista de vehículos en formato JSON con el siguiente formato:
 }
 ```
 
-2. Código de respuesta: `400 Validation Error`
+2. Código de respuesta: `401 Unauthorized`
 ```
 {
-  "message": "Vehicle validation error: <detalle_del_error>"
+  'message': 'Unauthorized - Valid API Key Required'
 }
 ```
