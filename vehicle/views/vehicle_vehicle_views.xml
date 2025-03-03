@@ -101,6 +101,7 @@
                     <field name="vehicle_brand_id"/>
                     <field name="vehicle_type_id"/>
                     <group expand="0" string="Group By">
+                        <filter string="Propietario" name="group_by_partner_id" domain="[]" context="{'group_by': 'partner_id'}"/>
                         <filter string="Modelo" name="group_by_vehicle_model_id" domain="[]" context="{'group_by': 'vehicle_model_id'}"/>
                         <filter string="Marca" name="group_by_vehicle_brand_id" domain="[]" context="{'group_by': 'vehicle_brand_id'}"/>
                         <filter string="Tipo de vehículo" name="group_by_vehicle_type_id" domain="[]" context="{'group_by': 'vehicle_type_id'}"/>
