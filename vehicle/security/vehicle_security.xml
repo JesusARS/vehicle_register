@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="module_category_services_vehicle" model="ir.module.category">
+            <field name="name">Vehículos</field>
+            <field name="description">Vehículos</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="group_vehicle_user" model="res.groups">
+            <field name="name">Creación de vehículos</field>
+            <field name="category_id" ref="module_category_services_vehicle"/>
+        </record>
+        <record id="group_vehicle_manager" model="res.groups">
+            <field name="name">Administrador de vehículos</field>
+            <field name="implied_ids" eval="[(4, ref('group_vehicle_user'))]"/>
+            <field name="category_id" ref="module_category_services_vehicle"/>
+        </record>
+
+    </data>
+</odoo>

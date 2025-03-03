@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vehicle_brand_manager,vehicle.brand.manager,model_vehicle_brand,vehicle.group_vehicle_manager,1,1,1,1
+access_vehicle_brand_user,vehicle.brand.user,model_vehicle_brand,vehicle.group_vehicle_user,1,0,0,0
+access_vehicle_service_manager,vehicle.service.manager,model_vehicle_service,vehicle.group_vehicle_manager,1,1,1,1
+access_vehicle_service_user,vehicle.service.user,model_vehicle_service,vehicle.group_vehicle_user,1,0,0,0
+access_vehicle_model_user,vehicle.model.user,model_vehicle_model,vehicle.group_vehicle_user,1,1,1,0
+access_vehicle_type_manager,vehicle.type.manager,model_vehicle_type,vehicle.group_vehicle_manager,1,1,1,1
+access_vehicle_type_user,vehicle.type.user,model_vehicle_type,vehicle.group_vehicle_user,1,0,0,0
+access_vehicle_vehicle_user,vehicle.vehicle.user,model_vehicle_vehicle,vehicle.group_vehicle_user,1,1,1,0
+access_vehicle_integration_manager,vehicle.integration.user,model_vehicle_integration,vehicle.group_vehicle_manager,1,1,1,0
+access_vehicle_integration_user,vehicle.integration.user,model_vehicle_integration,vehicle.group_vehicle_user,1,0,0,0
+access_vehicle_integration_status_user,vehicle.integration.status.user,model_vehicle_integration_status,vehicle.group_vehicle_user,1,1,1,0
+access_vehicle_integration_log_user,vehicle.integration.log.user,model_vehicle_integration_log,vehicle.group_vehicle_user,1,1,1,0

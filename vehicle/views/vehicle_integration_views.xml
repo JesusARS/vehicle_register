@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id='vehicle_integration_view_form' model='ir.ui.view'>
+            <field name="name">vehicle.integration.view.form</field>
+            <field name="model">vehicle.integration</field>
+            <field name="arch" type="xml">
+                <form string="Integraciones API de vehículos">
+                    <header>
+                        <button 
+                            type="object"
+                            name="action_force_integration"
+                            string="Integrar todo"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('is_enabled', '=', False)]}"
+                            confirm="¿Estás seguro que quiere integrar todos los vehículos?"
+                        />
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="endpoint"/>
+                                <field name="api_key" password="1"/>
+                            </group>
+                            <group>
+                                <field name="is_enabled" widget="boolean_toggle"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id='vehicle_integration_view_tree' model='ir.ui.view'>
+            <field name="name">vehicle.integration.view.tree</field>
+            <field name="model">vehicle.integration</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vehicle_integration_action" model="ir.actions.act_window">
+            <field name="name">Integraciones API de vehículos</field>
+            <field name="res_model">vehicle.integration</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                No hay integraciones API de vehículos creadas aún.
+                </p><p>
+                Haga clic en Nuevo para añadir una nueva integración.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_vehicle_integration" action="vehicle_integration_action" name="Integraciones" parent="menu_vehicle_config" sequence="10"/>
+
+    </data>
+</odoo>

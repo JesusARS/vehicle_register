@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">view.partner.form.inherit.vehicle</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <field name="vehicle_ids" invisible="1" groups="vehicle.group_vehicle_user"/>
+                    <button
+                        class="oe_stat_button"
+                        type="object"
+                        name="action_open_vehicles"
+                        groups="vehicle.group_vehicle_user"
+                        icon="fa-car" 
+                    >
+                        <field string="Vehículos" name="vehicle_count" widget="statinfo"/>
+                    </button>
+                    <button
+                        class="oe_stat_button"
+                        type="object"
+                        name="action_integrate_partner_vehicles"
+                        groups="vehicle.group_vehicle_user"
+                        icon="fa-refresh"
+                        attrs="{'invisible': [('vehicle_count', '=', 0)]}"
+                        confirm="¿Estás seguro que quiere integrar los vehículos de este usuario?"
+                    >
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_text text-wrap">Integrar vehículos</span>
+                        </div>
+                    </button>
+                </div>
+            </field>
+        </record>
+
+    </data>
+</odoo>
