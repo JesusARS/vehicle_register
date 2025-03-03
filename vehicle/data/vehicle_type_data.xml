@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="vehicle_type_car" model="vehicle.type">
+            <field name="name">Carro</field>
+        </record>
+        <record id="vehicle_type_suv" model="vehicle.type">
+            <field name="name">Camioneta</field>
+        </record>
+        <record id="vehicle_type_motorbike" model="vehicle.type">
+            <field name="name">Moto</field>
+            <field name="vehicle_category">motorbike</field>
+        </record>
+        <record id="vehicle_type_van" model="vehicle.type">
+            <field name="name">Van</field>
+        </record>
+        <record id="vehicle_type_pickup" model="vehicle.type">
+            <field name="name">Pickup</field>
+        </record>
+
+    </data>
+</odoo>

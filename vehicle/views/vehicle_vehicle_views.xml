@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id='vehicle_vehicle_view_form' model='ir.ui.view'>
+            <field name="name">vehicle.vehicle.view.form</field>
+            <field name="model">vehicle.vehicle</field>
+            <field name="arch" type="xml">
+                <form string="Vehículos">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                            <label for="plate"/>
+                            <h2>
+                                <field name="plate"/>
+                            </h2>
+                        </div>
+                        <group>
+                            <group string="Datos del propietario">
+                                <field name="partner_id"/>
+                                <field name="mobile"/>
+                                <field name="email"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Modelo">
+                                <field name="vehicle_model_id"/>
+                                <field name="vehicle_brand_id" options="{'no_open': True}"/>
+                                <field name="vehicle_type_id" options="{'no_open': True}"/>
+                                <field name="year"/>
+                                <field name="registration_date"/>
+                            </group>
+                            <group string="Detalles">
+                                <field name="color"/>
+                                <field name="doors"/>
+                                <field name="seats"/>
+                                <field name="transmission"/>
+                            </group>
+                            <group string="Ridery">
+                                <field name="vehicle_service_ids" widget="many2many_tags"  options="{'no_create': True}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page id="image_1024" name="image_1024" string="Foto del vehículo">
+                                <group>
+                                    <field name="image_1024" class="o_vehicle_form" widget="image"/>
+                                </group>
+                            </page>
+                            <page id="attachment_ids" name="attachment_ids" string="Documentación">
+                                <field name="attachment_ids" widget="many2many_binary"/>
+                            </page>
+                            <page id="description" name="description" string="Notas">
+                                <field name="description" placeholder="Escriba una descripción del vehículo"/>
+                            </page>
+                            <page id="integration_status_ids" name="integration_status_ids" string="Estatus de integraciones">
+                                <field name="integration_status_ids">
+                                    <tree edit="0" create="0" no_open="1">
+                                        <field name="integration_id"/>
+                                        <field name="status" widget="badge" decoration-danger="status == 'no_integration'" decoration-warning="status == 'to_update'" decoration-success="status == 'updated'"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id='vehicle_vehicle_view_tree' model='ir.ui.view'>
+            <field name="name">vehicle.vehicle.view.tree</field>
+            <field name="model">vehicle.vehicle</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="plate"/>
+                    <field name="vehicle_model_id"/>
+                    <field name="vehicle_brand_id"/>
+                    <field name="vehicle_type_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vehicle_vehicle_view_search" model="ir.ui.view">
+            <field name="name">vehicle.vehicle.view.search</field>
+            <field name="model">vehicle.vehicle</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="plate"/>
+                    <field name="partner_id"/>
+                    <field name="vehicle_model_id"/>
+                    <field name="vehicle_brand_id"/>
+                    <field name="vehicle_type_id"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Modelo" name="group_by_vehicle_model_id" domain="[]" context="{'group_by': 'vehicle_model_id'}"/>
+                        <filter string="Marca" name="group_by_vehicle_brand_id" domain="[]" context="{'group_by': 'vehicle_brand_id'}"/>
+                        <filter string="Tipo de vehículo" name="group_by_vehicle_type_id" domain="[]" context="{'group_by': 'vehicle_type_id'}"/>
+                        <filter string="Servicios" name="group_by_vehicle_service_ids" domain="[]" context="{'group_by': 'vehicle_service_ids'}"/>
+                        <filter string="Color" name="group_by_color" domain="[]" context="{'group_by': 'color'}"/>
+                        <filter string="Número de puertas" name="group_by_doors" domain="[]" context="{'group_by': 'doors'}"/>
+                        <filter string="Número de asientos" name="group_by_seats" domain="[]" context="{'group_by': 'seats'}"/>
+                        <filter string="Año" name="group_by_year" domain="[]" context="{'group_by': 'year'}"/>
+                        <filter string="Transmisión" name="group_by_transmission" domain="[]" context="{'group_by': 'transmission'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="vehicle_vehicle_action" model="ir.actions.act_window">
+            <field name="name">Vehículos</field>
+            <field name="res_model">vehicle.vehicle</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                No hay vehículos creados aún.
+                </p><p>
+                Haga clic en Nuevo para añadir un nuevo vehículo.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Vehículos" action="vehicle_vehicle_action" parent="menu_vehicle_root" id="menu_vehicle_vehicle" sequence="2"/>
+
+    </data>
+</odoo>

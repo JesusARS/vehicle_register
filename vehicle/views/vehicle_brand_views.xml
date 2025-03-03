@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id='vehicle_brand_view_form' model='ir.ui.view'>
+            <field name="name">vehicle.brand.view.form</field>
+            <field name="model">vehicle.brand</field>
+            <field name="arch" type="xml">
+                <form string="Marcas de vehículos">
+                    <sheet>
+                        <field name="image_128" widget="image" class="oe_avatar"/>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id='vehicle_brand_view_tree' model='ir.ui.view'>
+            <field name="name">vehicle.brand.view.tree</field>
+            <field name="model">vehicle.brand</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vehicle_brand_action" model="ir.actions.act_window">
+            <field name="name">Marcas de vehículos</field>
+            <field name="res_model">vehicle.brand</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                No hay marcas de vehículos creadas aún.
+                </p><p>
+                Haga clic en Nuevo para añadir una nueva marca de vehículo.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_vehicle_brand" action="vehicle_brand_action" name="Marcas" parent="menu_vehicle_config" sequence="1"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="vehicle_service_economic" model="vehicle.service">
+            <field name="name">Económico</field>
+            <field name="vehicle_type_ids" eval="[(4, ref('vehicle_type_car'))]"/>
+        </record>
+        <record id="vehicle_service_ridery_premium" model="vehicle.service">
+            <field name="name">Ridery Premium</field>
+            <field name="vehicle_type_ids" eval="[(4, ref('vehicle_type_car')), (4, ref('vehicle_type_suv')), (4, ref('vehicle_type_pickup'))]"/>
+        </record>
+        <record id="vehicle_service_cheap" model="vehicle.service">
+            <field name="name">Baratico</field>
+            <field name="vehicle_type_ids" eval="[(4, ref('vehicle_type_car'))]"/>
+        </record>
+        <record id="vehicle_service_ridery_seniors" model="vehicle.service">
+            <field name="name">Ridery Abuelos</field>
+            <field name="vehicle_type_ids" eval="[(4, ref('vehicle_type_car'))]"/>
+        </record>
+        <record id="vehicle_service_suv" model="vehicle.service">
+            <field name="name">Camioneta</field>
+            <field name="vehicle_type_ids" eval="[(4, ref('vehicle_type_suv')), (4, ref('vehicle_type_pickup'))]"/>
+        </record>
+        <record id="vehicle_service_ridery_pets" model="vehicle.service">
+            <field name="name">Ridery Mascotas</field>
+            <field name="vehicle_type_ids" eval="[(4, ref('vehicle_type_car'))]"/>
+        </record>
+        <record id="vehicle_service_ridery_women" model="vehicle.service">
+            <field name="name">Ellas x Ellas</field>
+            <field name="vehicle_type_ids" eval="[(4, ref('vehicle_type_car'))]"/>
+        </record>
+        <record id="vehicle_service_motorbike" model="vehicle.service">
+            <field name="name">Moto</field>
+            <field name="vehicle_type_ids" eval="[(4, ref('vehicle_type_motorbike'))]"/>
+        </record>
+        <record id="vehicle_service_motorbike_cheap" model="vehicle.service">
+            <field name="name">Moto Baratica</field>
+            <field name="vehicle_type_ids" eval="[(4, ref('vehicle_type_motorbike'))]"/>
+        </record>
+        <record id="vehicle_service_car_delivery" model="vehicle.service">
+            <field name="name">Envíos Carro</field>
+            <field name="vehicle_type_ids" eval="[(4, ref('vehicle_type_car'))]"/>
+        </record>
+        <record id="vehicle_service_suv_delivery" model="vehicle.service">
+            <field name="name">Envíos Camioneta</field>
+            <field name="vehicle_type_ids" eval="[(4, ref('vehicle_type_suv'))]"/>
+        </record>
+        <record id="vehicle_service_pickup_delivery" model="vehicle.service">
+            <field name="name">Envíos Pickup</field>
+            <field name="vehicle_type_ids" eval="[(4, ref('vehicle_type_pickup'))]"/>
+        </record>
+    
+    </data>
+</odoo>

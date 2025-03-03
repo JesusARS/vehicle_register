@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id='vehicle_model_view_form' model='ir.ui.view'>
+            <field name="name">vehicle.model.view.form</field>
+            <field name="model">vehicle.model</field>
+            <field name="arch" type="xml">
+                <form string="Modelos de vehículos">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="brand_id"/>
+                                <field name="vehicle_type_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id='vehicle_model_view_tree' model='ir.ui.view'>
+            <field name="name">vehicle.model.view.tree</field>
+            <field name="model">vehicle.model</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="brand_id"/>
+                    <field name="vehicle_type_id"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vehicle_model_action" model="ir.actions.act_window">
+            <field name="name">Modelos de vehículos</field>
+            <field name="res_model">vehicle.model</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                No hay modelos de vehículos creados aún.
+                </p><p>
+                Haga clic en Nuevo para añadir un nuevo modelo de vehículo.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_vehicle_model" action="vehicle_model_action" name="Modelos" parent="menu_vehicle_config" sequence="2"/>
+
+    </data>
+</odoo>

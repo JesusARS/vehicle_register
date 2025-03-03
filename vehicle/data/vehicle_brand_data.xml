@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="vehicle_brand_toyota" model="vehicle.brand">
+            <field name="name">Toyota</field>
+            <field name="image_128" type="base64" file="vehicle/static/img/vehicle_brand_toyota.png"/>
+        </record>
+        <record id="vehicle_brand_hyundai" model="vehicle.brand">
+            <field name="name">Hyundai</field>
+            <field name="image_128" type="base64" file="vehicle/static/img/vehicle_brand_hyundai.png"/>
+        </record>
+        <record id="vehicle_brand_jeep" model="vehicle.brand">
+            <field name="name">Jeep</field>
+            <field name="image_128" type="base64" file="vehicle/static/img/vehicle_brand_jeep.png"/>
+        </record>
+        <record id="vehicle_brand_ford" model="vehicle.brand">
+            <field name="name">Ford</field>
+            <field name="image_128" type="base64" file="vehicle/static/img/vehicle_brand_ford.png"/>
+        </record>
+        <record id="vehicle_brand_fiat" model="vehicle.brand">
+            <field name="name">Fiat</field>
+            <field name="image_128" type="base64" file="vehicle/static/img/vehicle_brand_fiat.png"/>
+        </record>
+        <record id="vehicle_brand_bera" model="vehicle.brand">
+            <field name="name">Bera</field>
+            <field name="image_128" type="base64" file="vehicle/static/img/vehicle_brand_bera.png"/>
+        </record>
+
+    </data>
+</odoo>

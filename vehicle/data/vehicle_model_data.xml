@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="vehicle_model_toyota_corolla" model="vehicle.model">
+            <field name="name">Corolla</field>
+            <field name="brand_id" ref="vehicle_brand_toyota"/>
+            <field name="vehicle_type_id" ref="vehicle_type_car"/>
+        </record>
+        <record id="vehicle_model_toyota_autana" model="vehicle.model">
+            <field name="name">Autana</field>
+            <field name="brand_id" ref="vehicle_brand_toyota"/>
+            <field name="vehicle_type_id" ref="vehicle_type_suv"/>
+        </record>
+        <record id="vehicle_model_hyundai_elantra" model="vehicle.model">
+            <field name="name">Elantra</field>
+            <field name="brand_id" ref="vehicle_brand_hyundai"/>
+            <field name="vehicle_type_id" ref="vehicle_type_car"/>
+        </record>
+        <record id="vehicle_model_hyundai_tucson" model="vehicle.model">
+            <field name="name">Tucson</field>
+            <field name="brand_id" ref="vehicle_brand_hyundai"/>
+            <field name="vehicle_type_id" ref="vehicle_type_suv"/>
+        </record>
+        <record id="vehicle_model_jeep_cherokee" model="vehicle.model">
+            <field name="name">Cherokee</field>
+            <field name="brand_id" ref="vehicle_brand_jeep"/>
+            <field name="vehicle_type_id" ref="vehicle_type_suv"/>
+        </record>
+        <record id="vehicle_model_jeep_compass" model="vehicle.model">
+            <field name="name">Compass</field>
+            <field name="brand_id" ref="vehicle_brand_jeep"/>
+            <field name="vehicle_type_id" ref="vehicle_type_suv"/>
+        </record>
+        <record id="vehicle_model_ford_elantra" model="vehicle.model">
+            <field name="name">Fiesta</field>
+            <field name="brand_id" ref="vehicle_brand_ford"/>
+            <field name="vehicle_type_id" ref="vehicle_type_car"/>
+        </record>
+        <record id="vehicle_model_ford_superduty" model="vehicle.model">
+            <field name="name">Super Duty</field>
+            <field name="brand_id" ref="vehicle_brand_ford"/>
+            <field name="vehicle_type_id" ref="vehicle_type_pickup"/>
+        </record>
+        <record id="vehicle_model_fiat_siena" model="vehicle.model">
+            <field name="name">Siena</field>
+            <field name="brand_id" ref="vehicle_brand_fiat"/>
+            <field name="vehicle_type_id" ref="vehicle_type_car"/>
+        </record>
+        <record id="vehicle_model_fiat_palio" model="vehicle.model">
+            <field name="name">Palio</field>
+            <field name="brand_id" ref="vehicle_brand_fiat"/>
+            <field name="vehicle_type_id" ref="vehicle_type_car"/>
+        </record>
+        <record id="vehicle_model_bera_leon" model="vehicle.model">
+            <field name="name">Leon</field>
+            <field name="brand_id" ref="vehicle_brand_bera"/>
+            <field name="vehicle_type_id" ref="vehicle_type_motorbike"/>
+        </record>
+        <record id="vehicle_model_bera_morini" model="vehicle.model">
+            <field name="name">Morini</field>
+            <field name="brand_id" ref="vehicle_brand_bera"/>
+            <field name="vehicle_type_id" ref="vehicle_type_motorbike"/>
+        </record>
+
+    </data>
+</odoo>
